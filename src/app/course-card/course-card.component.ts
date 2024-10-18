@@ -12,6 +12,12 @@ export class CourseCardComponent {
   @Input({ required: true })
   course: Course;
 
+  @Input({ required: true })
+  index: number;
+
+  @Input({ required: true })
+  count: number;
+
   @Output('courseSelected')
   courseEmitter = new EventEmitter<Course>();
 

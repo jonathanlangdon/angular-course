@@ -6,7 +6,22 @@
 </div>
 
 <div class="courses">
-  @for (course of courses; track course.id) {
-  <course-card (courseSelected)="onCourseSelected($event)" [course]="course" />
+  @for (course of courses; track course.id; let index = $index; let count =
+  $count; let first = $first; let last = $last; let odd = $odd) {
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="course"
+    [index]="index"
+    [count]="count"
+    [class.is-first]="first"
+    [class.is-last]="last"
+    [class.is-even]="$even"
+    [class.is-odd]="odd"
+  />
+  <!-- first element is styled with 'is-first' class -->
+  <!-- even and odd elements are styled differently too -->
+  <!-- can either use $-elements directly(like with even) or give custom name (like with odd) -->
+  } @empty {
+  <h1>No courses found!</h1>
   }
 </div>

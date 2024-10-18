@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { COURSES } from 'src/db-data';
+import { Component, Input } from '@angular/core';
+import { Course } from '../model/course';
 
 @Component({
   selector: 'course-card',
@@ -8,4 +8,7 @@ import { COURSES } from 'src/db-data';
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
 })
-export class CourseCardComponent {}
+export class CourseCardComponent {
+  @Input({ required: true })
+  course: Course;
+}

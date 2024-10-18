@@ -5,6 +5,25 @@
   />
 </div>
 
+<div class="demo">
+  <!-- <div>{{ startDate | date }}</div> -->
+  <div>Start Date: {{ startDate | date : 'MMM/dd/yyyy' }}</div>
+  <!-- angular pipe to specific format for startDate -->
+  <div>{{ title | titlecase }}</div>
+  <!-- angulage pipe for formatting for a title (capitalize 1st letters) -->
+  <div>{{ price | number : '3.3-5' }}</div>
+  <!-- angular pipe to format number... 3 digits prior to decimal and 3-5 digits after -->
+  <div>{{ price | currency }}</div>
+  <div>{{ price | currency : 'EUR' }}</div>
+  <!-- angular pipe for currency -->
+  <div>{{ rate | percent }}</div>
+  <!-- percent angular pipe -->
+  <!-- other pipes available:  -->
+  <!-- slice pipe:  that can slice an array with an @for loop -->
+  <!-- JSON pipe -->
+  <!-- keyvalue pipe -> use with @for to break an iterable down to keys and values -->
+</div>
+
 <div class="courses">
   @for (course of courses; track course.id; let odd-custom-name = $odd) {
   <course-card

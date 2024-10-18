@@ -6,17 +6,16 @@
 </div>
 
 <div class="courses">
-  @for (course of courses; track course.id; let index = $index; let count =
-  $count; let first = $first; let last = $last; let odd = $odd) {
+  @for (course of courses; track course.id; let odd-custom-name = $odd) {
   <course-card
     (courseSelected)="onCourseSelected($event)"
     [course]="course"
-    [index]="index"
-    [count]="count"
-    [class.is-first]="first"
-    [class.is-last]="last"
+    [index]="$index"
+    [count]="$count"
+    [class.is-first]="$first"
+    [class.is-last]="$last"
     [class.is-even]="$even"
-    [class.is-odd]="odd"
+    [class.is-odd]="odd - custom - name"
   />
   <!-- first element is styled with 'is-first' class -->
   <!-- even and odd elements are styled differently too -->

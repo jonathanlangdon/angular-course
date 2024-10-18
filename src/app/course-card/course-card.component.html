@@ -1,5 +1,6 @@
 <div class="course-card" [ngClass]="cardClasses()">
-  <div class="course-title">
+  <div class="course-title" [ngStyle]="cardStyles()">
+    <!-- dynamic background added with ngStyle -->
     {{ course.description }}
   </div>
   <p>Course {{ index + 1 }} of {{ count }}</p>

@@ -33,4 +33,9 @@ export class CourseCardComponent {
       return ['beginner'];
     }
   }
+
+  // dynamic background with ngStyles
+  cardStyles() {
+    return { 'background-image': 'url(' + this.course.iconUrl + ')' };
+  }
 }
